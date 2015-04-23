@@ -7,7 +7,7 @@ public  class Main
 
     public static void main(String[] args)
     {
-        ThereDoorGame thereDoorGame = new ThereDoorGame(new RandomGenerator());
+        ThereDoorGame thereDoorGame = new ThereDoorGame(new Host(), new RandomGenerator());
         int rightAnswerCount = 0;
         for (int i=0; i< LOOP_ROUND; i++) {
             thereDoorGame.initGame();

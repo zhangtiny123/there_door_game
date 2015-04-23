@@ -5,12 +5,14 @@ import java.util.List;
 
 public class ThereDoorGame
 {
+    private Host host;
     private RandomGenerator randomGenerator;
     private Player player;
     private List<Door> doors = new ArrayList<Door>();
 
-    public ThereDoorGame(RandomGenerator randomGenerator)
+    public ThereDoorGame(Host host, RandomGenerator randomGenerator)
     {
+        this.host = host;
         this.randomGenerator = randomGenerator;
         this.player = new Player(randomGenerator);
     }
@@ -36,13 +38,9 @@ public class ThereDoorGame
     }
 
     public void hostOpenOneDoorWithoutCar() {
-        for (Door door : doors) {
-            if (!door.getIsBeChosen() && !door.getIsCar()) {
-                door.setIsOpened(true);
-            }
-        }
+        host.openOneDoor(doors);
     }
-    
+
     public Boolean isLeftDoorWithCar() {
         for (Door door : doors) {
             if (!door.getIsBeChosen() && !door.getIsOpened()) {
