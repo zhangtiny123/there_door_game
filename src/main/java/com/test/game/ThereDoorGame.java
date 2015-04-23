@@ -3,15 +3,13 @@ package com.test.game;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ThereDoorGame
-{
+public class ThereDoorGame {
     private Host host;
     private RandomGenerator randomGenerator;
     private Player player;
     private List<Door> doors;
 
-    public ThereDoorGame(Host host, RandomGenerator randomGenerator)
-    {
+    public ThereDoorGame(Host host, RandomGenerator randomGenerator) {
         this.host = host;
         this.randomGenerator = randomGenerator;
         this.player = new Player(randomGenerator);
@@ -24,7 +22,7 @@ public class ThereDoorGame
         doors.add(new Door(1, false, false));
         doors.add(new Door(2, false, false));
         int bingoIndex = randomGenerator.randomIntGenerator();
-        
+
         for (Door door : doors) {
             if (bingoIndex == door.getID()) {
                 door.setIsCar(true);
@@ -33,7 +31,7 @@ public class ThereDoorGame
             }
         }
     }
-    
+
     public void playerChooseOneDoor() {
         player.choose(doors);
     }
