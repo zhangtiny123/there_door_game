@@ -8,13 +8,14 @@ public class ThereDoorGame
     private Host host;
     private RandomGenerator randomGenerator;
     private Player player;
-    private List<Door> doors = new ArrayList<Door>();
+    private List<Door> doors;
 
     public ThereDoorGame(Host host, RandomGenerator randomGenerator)
     {
         this.host = host;
         this.randomGenerator = randomGenerator;
         this.player = new Player(randomGenerator);
+        this.doors = new ArrayList<Door>();
     }
 
     public void initGame() {
